@@ -1,0 +1,9 @@
+{
+  "context-strategies": {
+    "command": "bash",
+    "args": ["/path/to/context-extraction/start-mcp.sh"],
+    "env": {
+      "MCP_WORKSPACE_ROOT": "/path/to/project"
+    }
+  }
+}
