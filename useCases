@@ -1,0 +1,30 @@
+Best Use Case Scenarios
+1. Cross-Session Codebase Memory (highest value)
+Ingest a codebase summary once → retrieve it in any future session without re-reading files. Today we demonstrated this: 8 bolt.diy knowledge nodes replaced dozens of list_dir + view_file calls.
+
+Agent opens a new conversation about a known project → sieves memory → answers instantly.
+
+2. User Preference Persistence
+The MCP already had user category nodes from prior sessions storing things like "User prefers minimal auth changes and strong regression tests." An agent can ingest preferences during one conversation and automatically recall them in future ones.
+
+Agent remembers coding style, tech preferences, risk tolerance — without the user repeating themselves.
+
+3. Pattern & Error Library
+Store known error → solution pairs, recurring patterns, or architectural decisions as nodes. When the agent hits a similar error, the sieve surfaces the fix immediately.
+
+"Invalid token error" → sieve activates "check middleware order" pattern node.
+
+4. Working Memory for Long Tasks
+During a multi-step task, ingest intermediate findings as nodes. Later steps can sieve for earlier findings without scanning the entire conversation history.
+
+Step 1 discovers auth bug → ingests it → Step 7 sieves and finds it contextually without scrolling back.
+
+5. Multi-Project Context Switching
+Tag nodes by project. Sieve with project-specific queries to instantly load only the relevant project's context, leaving other projects' nodes dormant.
+
+Agent works on bolt.diy → sieves bolt.diy nodes. Switches to another project → sieves different tag set.
+
+6. Semantic Search Over Decisions
+Store architectural decisions (decision category). When facing a new design choice, sieve past decisions to check consistency.
+
+"Should we use Zustand or nanostores here?" → sieve surfaces the prior decision node explaining why nanostores was chosen.*
